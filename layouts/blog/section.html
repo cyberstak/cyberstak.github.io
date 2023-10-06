@@ -1,0 +1,45 @@
+{{ define "main" }}
+<!-- Name the folder according to 
+    the corresponding content folder 
+    will automatically overwrite the _default layout -->
+<main>
+
+    <div class="container">
+
+        <div class="spacer-sm"></div>
+
+            <ul>
+            <!-- Ranges through content/posts/*.md -->
+            {{ with .Site.GetPage "blog" }}
+
+                {{ range .Pages }}
+                <li class="post-list-container columns">
+
+                    <div class="column is-three-fifth">
+                        <!-- {{ printf "%#v" .Params.header_image}} -->
+                        <img src="{{ .Params.header_image }}" alt="">
+                    </div>
+
+                    <div class="column">
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    <p>{{ .PublishDate.Format "January 02, 2006" }} | {{ .Params.author }}</p>
+                    <p>
+                        {{ .Params.description }}
+                    </p>
+                    </div>
+                    
+                </li>
+
+                {{ end }}
+
+            {{ end }}
+            </ul>   
+        
+        <div class="spacer"></div>
+
+    </div>
+
+</main>
+
+
+{{ end }}

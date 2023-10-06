@@ -1,0 +1,80 @@
+{{ define "main" }}
+<!-- renders the baseof.html file -->
+  <main aria-role="main">
+
+    <div class="is-widescreen">
+      
+      {{ partial "main-hero.html" }}
+
+      <!-- Section 2 -->
+      <section class="container sec-2">
+        <div class="content">
+          <h2><a href="#why-its-a-good-idea">Why it's a good idea</a></h2>
+          <span id="why-its-a-good-idea"></span>
+          <div class="columns sec-2-container">
+            <div class="column">
+              <p class="sec-2-copy">
+                Let's face it: <br>
+                <span class="underline">Getting more customers</span> 
+                is the most important thing in
+                running a successful business.
+              </p>
+            </div>
+            <div class="column">
+              <!-- collapsible -->
+              <div class="clp-heading">
+                <h3>You might be struggling with:</h3>
+              </div>
+              
+              {{ range .Site.Data.collapsible }}
+              <div class="clp-container">
+                
+                <button class="collapsible">
+                  <span>{{ .title }}</span>
+                  <i class="bi bi-chevron-down"></i>
+                </button>
+                <div class="clp-content">
+                  <li class="clp-item">{{ .point }}</li>
+                  <p class="clp-item">{{ .elaborate }}</p>
+                </div>
+                
+              </div>
+              {{ end }}
+
+            </div>
+          </div>
+        </div>
+    </section>
+
+    {{ partial "main-content" }}
+
+    <div class="spacer"></div>
+
+    {{ partial "call-to-action" }}
+
+    
+
+    </div>
+    
+
+  </main>
+
+  <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        } 
+      });
+    }
+  </script>
+
+{{ end }}
+

@@ -1,0 +1,36 @@
+{{ define "main" }}
+<!-- Location: /category-1/post -->
+
+<div class="container post-container">
+
+    <div class="spacer-sm"></div>
+
+    <div class="content">
+        
+        <div>
+            <h1 class="">{{ .Title }}</h1>
+            <p>{{ .Params.author }} | {{ .PublishDate.Format "January 1, 2006" }}</p>
+        </div>
+
+        <img src="{{ .Params.header_image }}" alt="">
+
+        <div class="spacer-sm"></div>
+
+        <div class="columns">
+            <div class="column is-two-thirds post-content">
+                {{ .Content }}
+            </div>
+            <div class="column">
+                {{ partial "sidebar" }}
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="spacer"></div>
+</div>
+
+
+{{ end }}
+
+

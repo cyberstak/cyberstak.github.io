@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+    {{ block "title" . }}
+      {{ .Site.Title }}
+    {{ end }}</title>
+    <!-- Additional CSS and JavaScript files -->
+    <link rel="stylesheet" href="/css/global.css">
+  </head>
+  <body>
+    {{ partial "header.html" . }}
+    <!-- Code that all your templates share, like a header -->
+    {{ block "main" . }}
+      <!-- The part of the page that begins to differ between templates -->
+    {{ end }}
+
+    {{ partial "footer.html" . }}
+    <!-- More shared code, perhaps a footer but that can be overridden if need be in  -->
+  
+  </body>
+</html>
+
+
+<!-- Data flow: baseof.html > index.html -->
