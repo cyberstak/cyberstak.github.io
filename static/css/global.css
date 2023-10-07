@@ -61,11 +61,18 @@ body {
 }
 
 .logo {
-    font-size: 2em;
-    font-weight: 800 !important;
-    background: linear-gradient(to right, #8338ec,#ff6aab);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
+    font-size: 1.3em;
+    font-weight: 600 !important;
+    /* transition: 0.2s ease-in-out; */
+}
+
+.navbar-brand > a:hover {
+    color: #8338ec;
+}
+
+.logo > img {
+    max-width: 100%;
+    height: auto;
 }
 
 .cta-btn {
@@ -589,4 +596,48 @@ a.cta-bookcall:hover {
     font-size: 1.5em;
     line-height: 2em;
     padding-bottom: 2.5em;
+}
+
+
+/* Rebuild Page */
+
+.rebuild-container {
+    margin: 0 10vw;
+}
+
+.rebuild-container > h1 {
+    /* font-size: 3em; */
+    font-size: clamp(1.8em, 3vw, 3em);
+    font-weight: 800;
+    line-height: 1.7em;
+    margin-bottom: 1em;
+}
+
+.rebuild-container > h2 {
+    /* font-size: 2em; */
+    font-size: clamp(1.3em, 3vw, 2em);
+    font-weight: 600;
+}
+
+.rebuild-container > p {
+    /* font-size: 1.5em; */
+    font-size: clamp(0.8em, 3vw, 1.5em);
+    line-height: 1.7em;
+}
+
+.rebuild-container > a {
+    padding: 1em 1.5em;
+    font-size: clamp(1em, 3vw, 1.5em);;
+}
+
+.rebuild-container > a:hover {
+    box-shadow: 6px 6px #ff6aab;
+    transition: 0.2s ease-in-out;
+}
+
+
+
+/* Media Query */
+@media screen and (max-width: ) {
+    
 }
